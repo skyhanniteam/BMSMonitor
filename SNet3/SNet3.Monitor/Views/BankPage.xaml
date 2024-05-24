@@ -1,0 +1,211 @@
+﻿<Page x:Class="SNet3.Monitor.Views.BankPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+      xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+      xmlns:local="clr-namespace:SNet3.Monitor.Views"
+      xmlns:viewModel="clr-namespace:SNet3.Monitor.ViewModels"
+      mc:Ignorable="d" 
+      d:DesignHeight="430" d:DesignWidth="600"
+      Title="{Binding Title}"
+      xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+      dx:ThemeManager.ThemeName="{StaticResource themeName}">
+    <Page.DataContext>
+        <viewModel:BankViewModel/>
+    </Page.DataContext>
+    <Page.Resources>
+        <Style TargetType="dx:SimpleButton" x:Key="setting">
+            <Setter Property="Width" Value="70"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="5,0,0,0"/>
+            <Setter Property="Content" Value="Setting"/>
+        </Style>
+        <Style TargetType="dxe:TextEdit">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="dxlc:GroupBox">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="0,10,0,0"/>
+            <Setter Property="Width" Value="320"/>
+        </Style>
+        <Style TargetType="RowDefinition" x:Key="gridRowHeight">
+            <Setter Property="Height" Value="25"/>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="95"/>
+            <RowDefinition Height="340"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="330"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <dxlc:GroupBox Grid.ColumnSpan="2" Header="Info" Width="530" Margin="0,0,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Style="{StaticResource gridRowHeight}"/>
+                    <RowDefinition Style="{StaticResource gridRowHeight}"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="85"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="85"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="85"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Ip" Style="{StaticResource titleTextBlock}"/>
+                <TextBlock Grid.Column="1" Text="{Binding BankModel.Ip}"/>
+                <TextBlock Grid.Column="2" Text="Voltage" Style="{StaticResource titleTextBlock}"/>
+                <TextBlock Grid.Column="3" Text="{Binding BankModel.Voltage}"/>
+                <TextBlock Grid.Column="4" Text="Current" Style="{StaticResource titleTextBlock}"/>
+                <TextBlock Grid.Column="5" Text="{Binding BankModel.Current}"/>
+                <TextBlock Grid.Row="1" Text="Version" Style="{StaticResource titleTextBlock}"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding BankModel.Version}"/>
+                <TextBlock Grid.Row="1" Grid.Column="2" Text="AmbientTemp." Style="{StaticResource titleTextBlock}"/>
+                <TextBlock Grid.Row="1" Grid.Column="3" Text="{Binding BankModel.AmbientTemperature}"/>
+                <TextBlock Grid.Row="1" Grid.Column="4" Text="RippleCurrent" Style="{StaticResource titleTextBlock}"/>
+                <TextBlock Grid.Row="1" Grid.Column="5" Text="{Binding BankModel.RippleCurrent}"/>
+            </Grid>
+        </dxlc:GroupBox>
+        <StackPanel Grid.Row="1">            
+            <dxlc:GroupBox Header="Gain">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Style="{StaticResource gridRowHeight}"/>
+                        <RowDefinition Style="{StaticResource gridRowHeight}"/>
+                        <RowDefinition Style="{StaticResource gridRowHeight}"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="VoltageGain" Style="{StaticResource titleTextBlock}"/>
+                    <TextBlock Grid.Column="1" Text="{Binding BankModel.VoltageGain}"/>
+                    <dxe:TextEdit Grid.Column="2" Text="{Binding SetVoltageGain}" VerticalAlignment="Center"/>
+                    <dx:SimpleButton Style="{StaticResource setting}" Grid.Column="3" Command="{Binding OnUpdateGain}" CommandParameter="VoltageGain"/>
+                    <TextBlock Grid.Row="1" Text="CurrentGain" Style="{StaticResource titleTextBlock}"/>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding BankModel.CurrentGain}"/>
+                    <dxe:TextEdit Grid.Row="1" Grid.Column="2" Text="{Binding SetCurrentGain}"/>
+                    <dx:SimpleButton Style="{StaticResource setting}" Grid.Row="1" Grid.Column="3" Command="{Binding OnUpdateGain}" CommandParameter="CurrentGain"/>
+                    <TextBlock Grid.Row="2" Text="CurrentOffset" Style="{StaticResource titleTextBlock}"/>
+                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding BankModel.CurrentOffset}"/>
+                    <dxe:TextEdit Grid.Row="2" Grid.Column="2" Text="{Binding SetCurrentOffset, StringFormat={}{0:0.0}}"/>
+                    <dx:SimpleButton Style="{StaticResource setting}" Grid.Row="2" Grid.Column="3" Command="{Binding OnUpdateGain}" CommandParameter="CurrentOffset"/>
+                </Grid>
+            </dxlc:GroupBox>
+            <dxlc:GroupBox Header="Period">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Style="{StaticResource gridRowHeight}"/>
+                        <RowDefinition Style="{StaticResource gridRowHeight}"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="CellVoltage" Style="{StaticResource titleTextBlock}"/>
+                    <TextBlock Grid.Column="1" Text="{Binding BankModel.CellVoltagePeriod}"/>
+                    <dxe:TextEdit Grid.Column="2" Text="{Binding SetCellVoltagePeriod}"/>
+                    <dx:SimpleButton Style="{StaticResource setting}" Grid.Column="3" Command="{Binding OnUpdateCellVoltagePeriod}"/>
+                    <TextBlock Grid.Row="1" Text="CellResistance" Style="{StaticResource titleTextBlock}"/>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding BankModel.CellResistancePeriod}"/>
+                    <dxe:TextEdit Grid.Row="1" Grid.Column="2" Text="{Binding SetCellResistancePeriod}"/>
+                    <dx:SimpleButton Style="{StaticResource setting}" Grid.Row="1" Grid.Column="3" Command="{Binding OnUpdateCellResistancePeriod}"/>
+                </Grid>
+            </dxlc:GroupBox>
+            <dxlc:GroupBox Header="DisCharge">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Style="{StaticResource gridRowHeight}"/>
+                        <RowDefinition Style="{StaticResource gridRowHeight}"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Detect" Style="{StaticResource titleTextBlock}"/>
+                    <TextBlock Grid.Column="1" Text="{Binding BankModel.DisChargeCurrentDetect}"/>
+                    <dxe:TextEdit Grid.Column="2" Text="{Binding SetDisChargeCurrentDetect}"/>
+                    <dx:SimpleButton Style="{StaticResource setting}" Grid.Column="3" Command="{Binding OnUpdateDischarge}" CommandParameter="detect"/>
+                    <TextBlock Grid.Row="1" Text="Release" Style="{StaticResource titleTextBlock}"/>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding BankModel.DisChargeCurrentRelease}"/>
+                    <dxe:TextEdit Grid.Row="1" Grid.Column="2" Text="{Binding SetDisChargeCurrentRelease}"/>
+                    <dx:SimpleButton Style="{StaticResource setting}" Grid.Row="1" Grid.Column="3" Command="{Binding OnUpdateDischarge}" CommandParameter="release"/>
+                </Grid>
+            </dxlc:GroupBox>            
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <dxlc:GroupBox Header="UnitMax">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Style="{StaticResource gridRowHeight}"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="UnitMax" Style="{StaticResource titleTextBlock}"/>
+                    <TextBlock Grid.Column="1" Text="{Binding BankModel.UnitMax}"/>
+                    <dxe:TextEdit Grid.Column="2" Text="{Binding SetUnitMax}"/>
+                    <dx:SimpleButton Style="{StaticResource setting}" Grid.Column="3" Command="{Binding OnUpdateUnitMax}"/>
+                </Grid>
+            </dxlc:GroupBox>
+            <dxlc:GroupBox Header="Deadband">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Style="{StaticResource gridRowHeight}"/>
+                        <RowDefinition Style="{StaticResource gridRowHeight}"/>
+                        <RowDefinition Style="{StaticResource gridRowHeight}"/>
+                        <RowDefinition Style="{StaticResource gridRowHeight}"/>
+                        <RowDefinition Style="{StaticResource gridRowHeight}"/>
+                        <RowDefinition Style="{StaticResource gridRowHeight}"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Voltage" Style="{StaticResource titleTextBlock}"/>
+                    <TextBlock Grid.Column="1" Text="{Binding BankModel.VoltageDeadband}"/>
+                    <dxe:TextEdit Grid.Column="2" Text="{Binding SetVoltageDeadband}"/>
+                    <dx:SimpleButton Style="{StaticResource setting}" Grid.Column="3" Command="{Binding OnUpdateDeadband}" CommandParameter="voltageDeadband"/>
+                    <TextBlock Grid.Row="1" Text="Current" Style="{StaticResource titleTextBlock}"/>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding BankModel.CurrentDeadband}"/>
+                    <dxe:TextEdit Grid.Row="1" Grid.Column="2" Text="{Binding SetCurrentDeadband}"/>
+                    <dx:SimpleButton Style="{StaticResource setting}" Grid.Row="1" Grid.Column="3" Command="{Binding OnUpdateDeadband}" CommandParameter="currentDeadband"/>
+                    <TextBlock Grid.Row="2" Text="Temperature" Style="{StaticResource titleTextBlock}"/>
+                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding BankModel.TemperatureDeadband}"/>
+                    <dxe:TextEdit Grid.Row="2" Grid.Column="2" Text="{Binding SetTemperatureDeadband}"/>
+                    <dx:SimpleButton Style="{StaticResource setting}" Grid.Row="2" Grid.Column="3" Command="{Binding OnUpdateDeadband}" CommandParameter="temperatureDeadband"/>
+                    <TextBlock Grid.Row="3" Text="RippleCurrent" Style="{StaticResource titleTextBlock}"/>
+                    <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding BankModel.RippleCurrentDeadband}"/>
+                    <dxe:TextEdit Grid.Row="3" Grid.Column="2" Text="{Binding SetRippleCurrentDeadband}"/>
+                    <dx:SimpleButton Style="{StaticResource setting}" Grid.Row="3" Grid.Column="3" Command="{Binding OnUpdateDeadband}" CommandParameter="rippleCurrentDeadband"/>
+                    <TextBlock Grid.Row="4" Text="CellVoltage" Style="{StaticResource titleTextBlock}"/>
+                    <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding BankModel.CellVoltageDeadband}"/>
+                    <dxe:TextEdit Grid.Row="4" Grid.Column="2" Text="{Binding SetCellVoltageDeadband}"/>
+                    <dx:SimpleButton Style="{StaticResource setting}" Grid.Row="4" Grid.Column="3" Command="{Binding OnUpdateDeadband}" CommandParameter="cellVoltageDeadband"/>
+                    <TextBlock Grid.Row="5" Text="CellResistance" Style="{StaticResource titleTextBlock}"/>
+                    <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding BankModel.CellResistanceDeadband}"/>
+                    <dxe:TextEdit Grid.Row="5" Grid.Column="2" Text="{Binding SetCellResistanceDeadband}"/>
+                    <dx:SimpleButton Style="{StaticResource setting}" Grid.Row="5" Grid.Column="3" Command="{Binding OnUpdateDeadband}" CommandParameter="cellResistanceDeadband"/>
+                </Grid>
+            </dxlc:GroupBox>
+            <dx:SimpleButton Content="Reset" Margin="0,10,0,0" Command="{Binding OnReset}" Height="25" Width="320" HorizontalAlignment="Left"/>
+        </StackPanel>
+    </Grid>
+</Page>

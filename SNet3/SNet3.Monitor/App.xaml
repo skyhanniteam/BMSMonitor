@@ -1,0 +1,65 @@
+﻿<Application x:Class="SNet3.Monitor.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:clr="clr-namespace:System;assembly=mscorlib"
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+             xmlns:local="clr-namespace:SNet3.Monitor"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="dxlc:LayoutControl">
+            <Setter Property="Padding" Value="0,0,0,0"/>
+        </Style>        
+        <Style TargetType="TextBlock" x:Key="titleTextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="Maroon"/>
+        </Style>
+        <!--
+        <clr:String x:Key="themeName">Office2016White</clr:String>
+        <clr:String x:Key="themeName">Office2016BlackSE</clr:String>
+        <clr:String x:Key="themeName">Office2016ColorfulSE</clr:String>
+        <clr:String x:Key="themeName">Office2016WhiteSE</clr:String>
+        -->
+        <clr:String x:Key="themeName">Office2016WhiteSE</clr:String>
+    </Application.Resources>
+</Application>
+
+<!--
+        BaseFullName = "Base";  
+HybridAppName = "HybridApp";
+DXStyleName = "DXStyle";
+LightGrayName = "LightGray";
+DeepBlueName = "DeepBlue";
+SevenName = "Seven";
+
+MetropolisDarkName = "MetropolisDark";
+MetropolisLightName = "MetropolisLight";
+
+
+Office2007BlackName = "Office2007Black";        
+Office2007BlueName = "Office2007Blue";       
+Office2007SilverName = "Office2007Silver";   
+
+Office2010BlackName = "Office2010Black";
+Office2010BlueName = "Office2010Blue";
+Office2010SilverName = "Office2010Silver";
+
+Office2013DarkGrayName = "Office2013DarkGray";
+Office2013LightGrayName = "Office2013LightGray";
+Office2013Name = "Office2013";
+
+Office2016BlackName = "Office2016Black";
+Office2016ColorfulName = "Office2016Colorful";
+Office2016WhiteName = "Office2016White";
+
+Office2016BlackSEName = "Office2016BlackSE";      
+Office2016ColorfulSEName = "Office2016ColorfulSE";      
+Office2016WhiteSEName = "Office2016WhiteSE";
+
+VS2010Name = "VS2010";
+VS2017BlueName = "VS2017Blue";
+VS2017DarkName = "VS2017Dark";
+VS2017LightName = "VS2017Light";
+    -->

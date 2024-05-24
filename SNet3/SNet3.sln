@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SNet3.Server", "SNet3.Server\SNet3.Server.csproj", "{B9D04FEE-83F5-455A-B19D-D318DF76A810}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SNet3.Core", "SNet3.Core\SNet3.Core.csproj", "{71D0B767-46B7-486F-B988-E065D544AB29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SNet3.Client", "SNet3.Client\SNet3.Client.csproj", "{0C68DEB5-C9F4-4B95-99C1-FAD8B4D56E14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SNet3.Monitor", "SNet3.Monitor\SNet3.Monitor.csproj", "{44DBFAAE-6AEF-4173-AC35-A9094DEBCD7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SNet3.Publish", "SNet3.Publish\SNet3.Publish.csproj", "{0275125E-0139-42C9-91D4-6F748A00137D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9D04FEE-83F5-455A-B19D-D318DF76A810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9D04FEE-83F5-455A-B19D-D318DF76A810}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9D04FEE-83F5-455A-B19D-D318DF76A810}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9D04FEE-83F5-455A-B19D-D318DF76A810}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71D0B767-46B7-486F-B988-E065D544AB29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71D0B767-46B7-486F-B988-E065D544AB29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71D0B767-46B7-486F-B988-E065D544AB29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71D0B767-46B7-486F-B988-E065D544AB29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C68DEB5-C9F4-4B95-99C1-FAD8B4D56E14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C68DEB5-C9F4-4B95-99C1-FAD8B4D56E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C68DEB5-C9F4-4B95-99C1-FAD8B4D56E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C68DEB5-C9F4-4B95-99C1-FAD8B4D56E14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44DBFAAE-6AEF-4173-AC35-A9094DEBCD7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44DBFAAE-6AEF-4173-AC35-A9094DEBCD7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44DBFAAE-6AEF-4173-AC35-A9094DEBCD7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44DBFAAE-6AEF-4173-AC35-A9094DEBCD7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0275125E-0139-42C9-91D4-6F748A00137D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0275125E-0139-42C9-91D4-6F748A00137D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0275125E-0139-42C9-91D4-6F748A00137D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0275125E-0139-42C9-91D4-6F748A00137D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B3165636-1408-4736-9780-235A0703BE0C}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://waton.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SNet3.Client\\SNet3.Client.csproj
+		SccProjectName1 = SNet3.Client
+		SccLocalPath1 = SNet3.Client
+		SccProjectUniqueName2 = SNet3.Core\\SNet3.Core.csproj
+		SccProjectName2 = SNet3.Core
+		SccLocalPath2 = SNet3.Core
+		SccProjectUniqueName3 = SNet3.Monitor\\SNet3.Monitor.csproj
+		SccProjectName3 = SNet3.Monitor
+		SccLocalPath3 = SNet3.Monitor
+		SccProjectUniqueName4 = SNet3.Server\\SNet3.Server.csproj
+		SccProjectName4 = SNet3.Server
+		SccLocalPath4 = SNet3.Server
+		SccProjectUniqueName5 = SNet3.Publish\\SNet3.Publish.csproj
+		SccProjectName5 = SNet3.Publish
+		SccLocalPath5 = SNet3.Publish
+	EndGlobalSection
+EndGlobal
